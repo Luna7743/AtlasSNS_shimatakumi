@@ -20,3 +20,336 @@ header{
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 }
+
+/* head */
+#head {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#head > h1 {
+    /* width: 80px; */
+    flex: 0 1 80px;
+    padding-left: 20px;
+}
+
+#head > h1 > a {
+    width: 100%;
+    display: block;
+}
+
+#head > h1 > a > img {
+    width: 100%;
+    height: auto;
+}
+
+#head > p {
+    color: #fff;
+    flex: 1;
+    text-align: right;
+}
+
+.icon {
+    /* width: 40px; */
+    flex: 0 0 40px;
+    padding-right: 20px;
+}
+
+.icon > img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* アコーディオンメニュー用のスタイル */
+
+/* ドロップダウンメニューのトリガーとなるボタンのスタイルを定義 */
+.menu-btn {
+    width: 60px;
+    height: 60px;
+    top: 1px;
+    right: 1px;
+    background-color: #186AC9;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* ボタン内部の要素のスタイルを定義 */
+.menu-btn .inn {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ボタン内部の矢印のスタイルを定義 */
+.menu-btn .inn:before {
+    position: absolute;
+    content: "";
+    top: 40%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    transform: translate(-50%, -40%) rotate(135deg);
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transition: 0.3s ease;
+}
+
+/* ドロップダウンメニューが開いた状態のボタン内部の矢印のスタイルを定義 */
+.menu-btn.is-open .inn:before {
+    top: 60%;
+    transform: translate(-50%, -60%) rotate(-45deg);
+}
+
+/* ドロップダウンメニューのスタイルを定義 */
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 20%;
+    background-color: #fff;
+    text-align: center;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    pointer-events: none;
+    transform: translateY(-30px);
+    border: 1px solid #000;
+}
+
+/* メニュー内のリストとリストアイテムのスタイルを定義 */
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    border-top: 1px solid #000;
+}
+
+/* メニュー内のリンクのスタイルを定義 */
+.nav-menu ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #727272;
+}
+
+.nav-menu ul li a:hover {
+    background-color: rgb(0, 0, 129);
+    color: #fff;
+}
+
+/* ドロップダウンメニューが開いた状態のスタイルを定義 */
+.menu-btn.is-open+.nav-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* 投稿共通 */
+
+/* 投稿フォームのCSS */
+.post-form {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    border-bottom: 7px solid #dbdbdb;
+    padding-bottom: 10px;
+}
+
+.post-form > .user-icon {
+    margin-right: 20px;
+    margin-left: 50px;
+    margin-bottom: 60px;
+}
+
+.post-form > .user-icon > .user-icon-image {
+    width: 45px;
+    height: auto;
+}
+
+.post-form-content {
+    display: flex;
+    align-items: center;
+}
+
+.form-group {
+    margin-right: 10px;
+}
+
+.form-group > .form-control {
+    border: none;
+    resize: none;
+}
+
+.form-control {
+    width: 55vw;
+    height: 80px;
+}
+
+/* プレースホルダーの色を変更 */
+.form-control::placeholder {
+    color: #ccc;
+    /* ブラウザによってはプレースホルダーの透明度が調整されることがあるため、透明度を100%に設定 */
+    opacity: 1;
+}
+
+.post-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.post-button-image {
+    width: 45px;
+    height: auto;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+
+/* 投稿一覧 */
+.table tr {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #727272;
+    padding: 10px 0;
+}
+
+.user-icon img {
+    width: 45px;
+    height: auto;
+    object-fit: cover;
+}
+
+.post-list-image {
+    display: flex;
+    align-items: center;
+    margin-top: 50%;
+}
+
+.post-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 25px;
+}
+
+/* ボタン・フォームのリセット */
+button.js-modal-open,
+button.delete-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.delete-button:hover img {
+    content: url(/images/trash-h.png);
+    transform: scaleX(1);
+}
+
+/* 更新・削除ボタン */
+.js-modal-open img,
+.delete-button img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+td > .user-icon {
+    margin-bottom: 15px;
+    margin-left: 100px;
+    margin-right: 20px;
+}
+
+/* 投稿者の名前 */
+.login-name {
+    margin-bottom: 10px;
+}
+
+/* 投稿内容 */
+.post-content {
+    width: 60vw;
+}
+
+/* 投稿時間 */
+.time {
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.delete-button img {
+    margin-left: 10px;
+}
+
+
+
+/* モーダル */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal__bg {
+    background: rgba(0, 0, 0, 0.1);
+    /* 半透明の黒 */
+    height: 100vh;
+    /* ビューポートの高さに合わせる */
+    position: absolute;
+    /* 絶対位置 */
+    width: 100%;
+    /* 幅を100%に設定 */
+}
+
+.modal__content {
+    background: #fff;
+    /* text-align: center; */
+    left: 50%; /* 水平方向中央 */
+    top: 50%;/* 垂直方向中央 */
+    padding: 40px;/* 内側の余白 */
+    position: absolute;/* 絶対位置 */
+    transform: translate(-50%, -50%);/* 中央に揃える */
+    width: 60%;
+    border-radius: 10px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_post_content {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    height: 100px;
+    resize: none;
+}
+
+.modal-buttom {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-buttom img {
+    width: 30px;
+    height: 30px;
+}

@@ -51,4 +51,17 @@ class LoginController extends Controller
         }
         return view("auth.login");
     }
+
+    // ログアウト処理
+    public function logout(Request $request){
+        // 現在認証されているユーザーをログアウトさせる
+        Auth::logout();
+        // セッションを無効化する
+        $request->session()->invalidate();
+        // セッションIDを再生成し、トークンを再発行する
+        $request->session()->regenerateToken();
+
+         // ログアウト後にリダイレクトするURL
+        return redirect('/login');
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User; // Userモデルをインポート
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,10 +13,33 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'username' => 'シマ',
-            'mail' => 'tahaidao075@gmaol.com',
-            'password' => bcrypt('password'),
+            [
+                'username' => 'スペシャルウィーク',
+                'mail' => 'tahaidao075@gmaol.com',
+                'password' => bcrypt('password'),
+                'images' => 'images/icon4.png'
+            ],
+            [
+                'username' => 'ハルウララ',
+                'mail' => 'user1@example.com',
+                'password' => bcrypt('password'),
+                'images' => 'images/icon6.png'
+            ],
+            [
+                'username' => 'キングヘイロー',
+                'mail' => 'user2@example.com',
+                'password' => bcrypt('password'),
+                'images' => 'images/icon3.png'
+            ],
+            [
+                'username' => 'グラスワンダー',
+                'mail' => 'user3@example.com',
+                'password' => bcrypt('password'),
+                'images' => 'images/icon7.png'
+            ],
+            // 追加のユーザーを必要に応じてここに追加
         ]);
+
 
     }
 }

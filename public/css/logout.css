@@ -1,10 +1,173 @@
-@charset "UTF-8";
+@charset "utf-8";
 
-html{
-    height: 100%;
+/* 全体のスタイルをリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+
+/* 全体共通 */
+html,
+body {
     height: 100%;
-    background: #186AC9;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(180deg, rgba(0, 104, 251, 1) 0%, rgba(21, 130, 224, 1) 55%, rgba(223, 215, 59, 1) 91%);
+    /* 青と黄色のグラデーション */
+}
+
+body {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/* 親要素:login.blade.php */
+.box {
+    /* ここから中央寄せに必要 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    /* 下にスペースを追加 */
+}
+
+header img {
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+}
+
+#container {
+    width: 80%;
+    /* 必要に応じて調整 */
+    max-width: 600px;
+    /* 必要に応じて調整 */
+    background: rgba(0, 0, 0, 0.1);
+    /* 背景色を追加（必要に応じて変更） */
+    margin: 0 auto;
+    padding: 30px 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+
+
+/* 子要素共通 */
+a {
+    color: #fff;
+    text-decoration: none;
+    margin-top: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+/* 子要素:login,register共通 */
+form {
+    width: 100%;
+    /* フォームの幅を100%に設定 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    width: 80%;
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+form .input {
+    width: 80%;
+    /* 必要に応じて調整 */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    width: 30%;
+    padding: 10px;
+    margin-left: 50%;
+    margin-bottom: 20px;
+    background-color: rgb(210, 50, 50);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.guide {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* login */
+.sub-text {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* register */
+h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.alert {
+    color: red;
+    margin-top: 10px;
+}
+
+/* added */
+#clear {
+    text-align: center;
+}
+
+#clear>.comp {
+    font-size: 14px;
+    text-align: left;
+    margin: 50px 50px 30px 50px;
+}
+
+#clear>.btn {
+    font-size: 14px;
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin: auto;
+    background-color: rgb(210, 50, 50);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#clear>p>a {
+    border-bottom: none;
 }

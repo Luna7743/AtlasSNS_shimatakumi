@@ -20,13 +20,22 @@
   <!--OGPタグ/twitterカード-->
 </head>
 <body>
-  <header>
-    <h1><img src="images/atlas.png"></h1>
-    <p>Social Network Service</p>
-  </header>
-  <div id="container">
-    @yield('content')
+  {{-- フラッシュメッセージの表示 --}}
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+  <div class="box">
+    <header>
+      <h1><img src="images/atlas.png"></h1>
+      <p class="subtitle">Social Network Service</p>
+    </header>
+    <div id="container">
+      @yield('content')
+    </div>
   </div>
+
   <script src="JavaScriptファイルのURL"></script>
   <script src="JavaScriptファイルのURL"></script>
 </body>

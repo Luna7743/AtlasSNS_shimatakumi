@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <!--IEブラウザ対策-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="ページの内容を表す文章" />
@@ -19,46 +20,68 @@
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->
 </head>
+
 <body>
     <header>
         <div id = "head">
-        <h1><a><img src="images/logo.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>〇〇さん<img src="images/arrow.png"></p>
-                <div>
+            <h1>
+                <a href="/top">
+                    <img src="{{ asset('images/atlas.png')}}">
+                </a>
+            </h1>
+            <p>{{ Auth::user()->username }} さん</p>
+            <button type="button" class="menu-btn">
+                <span class="inn"></span>
+            </button>
+            <nav class="nav-menu">
                 <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
+                    <li><a href="/top">HOME</a></li>
+                    <li><a href="/profile">プロフィール編集</a></li>
+                    <li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <a href="#"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            ログアウト
+                        </a>
+                    </li>
                 </ul>
+            </nav>
+            <div class="icon">
+                <img src="{{ '/' . Auth::user()->images }}" alt="ユーザーのアイコン" class="user-icon-image">
             </div>
+
         </div>
     </header>
+
     <div id="row">
         <div id="container">
             @yield('content')
-        </div >
+        </div>
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{ Auth::user()->username }}さんの</p>
                 <div>
-                <p>フォロー数</p>
-                <p>〇〇名</p>
+                    <p>フォロー数</p>
+                    <p>{{ Auth::user()->follows->count() }}名</p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <p class="btn"><a href="/follow-list">フォローリスト</a></p>
                 <div>
-                <p>フォロワー数</p>
-                <p>〇〇名</p>
+                    <p>フォロワー数</p>
+                    <p>{{ Auth::user()->followers->count() }}名</p>
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <p class="btn"><a href="/search">ユーザー検索</a></p>
         </div>
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JavaScriptファイル -->
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
+
 </html>
