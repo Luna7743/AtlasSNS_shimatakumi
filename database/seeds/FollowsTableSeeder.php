@@ -29,6 +29,10 @@ class FollowsTableSeeder extends Seeder
                 'following_id' => 14, // フォロワーユーザー4
                 'followed_id' => 3  // ログインユーザー
             ],
+            [
+                'following_id' => 23, // フォロワーユーザー5
+                'followed_id' => 3  // ログインユーザー
+            ],
         ]);
     }
 }

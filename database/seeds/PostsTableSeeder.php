@@ -37,6 +37,12 @@ class PostsTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'user_id' => 15, // グラスワンダーのID
+                'post' => 'マルゼンスキーの投稿1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
             // 追加の投稿を必要に応じてここに追加
         ]);
     }
