@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 
+// Laravelのユーザー登録機能を管理するコントローラー
 class RegisterController extends Controller
 {
     /*
@@ -48,16 +49,17 @@ class RegisterController extends Controller
             'mail' => 'bail|required|email|unique:users|between:5,40',
             'password' => 'bail|required|string|confirmed|regex:/^[a-zA-Z0-9]+$/|between:8,20',
             ]);
-        //ここまでバリデーション
 
             $username = $request->input('username');
             $mail = $request->input('mail');
             $password = $request->input('password');
 
+            // ユーザーの作成：
             User::create([
                 'username' => $username,
                 'mail' => $mail,
                 'password' => bcrypt($password),
+                'images' => 'icon1.png',
             ]);
 
             //session機能利用して、ユーザー名表示
@@ -67,9 +69,7 @@ class RegisterController extends Controller
         }
         //ここまでがPOSTの処理
 
-        //ここから
         return view('auth.register');
-        //ここまでがGETの処理
     }
 
     public function added(){

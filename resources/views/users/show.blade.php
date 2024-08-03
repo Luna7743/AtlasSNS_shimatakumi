@@ -13,7 +13,7 @@
                         <dd>{{ $user->bio }}</dd>
                     </dl>
                 </div>
-                
+
                 <div class="show-button">
                     @if (auth()->user()->isFollowing($user->id))
                         <form action="{{ route('unfollow', $user->id) }}" method="post">
@@ -27,9 +27,7 @@
                         </form>
                     @endif
                 </div>
-
             </div>
-
         </div>
 
         {{-- 投稿一覧 --}}

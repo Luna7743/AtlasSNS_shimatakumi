@@ -50,4 +50,5 @@ class User extends Authenticatable
         //hasMany: 1対多のリレーションを定義
         return $this->hasMany(Post::class);
     }
+
 }

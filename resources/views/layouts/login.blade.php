@@ -26,7 +26,7 @@
         <div id ="head">
             <h1>
                 <a href="/top">
-                    <img src="{{ asset('images/atlas.png')}}">
+                    <img src="{{ asset('images/atlas.png') }}">
                 </a>
             </h1>
             <p>{{ Auth::user()->username }} さん</p>
@@ -49,7 +49,7 @@
                 </ul>
             </nav>
             <div class="icon">
-                <img src="{{ 'storage/' . Auth::user()->images }}" alt="ユーザーのアイコン" class="user-icon-image">
+                <img src="{{ '/' . Auth::user()->images }}" alt="ユーザーのアイコン" class="user-icon-image">
             </div>
 
         </div>

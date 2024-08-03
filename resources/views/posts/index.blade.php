@@ -40,7 +40,6 @@
                             </div>
                         </td>
 
-
                         <td class="list-time">
                             <div class="time">{{ $post->created_at->setTimezone('Asia/Tokyo')->format('Y-m-d H:i') }}
                             </div>
@@ -62,7 +61,6 @@
                                 </div>
                             @endif
                         </td>
-
                     </tr>
                 @endforeach
             </table>

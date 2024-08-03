@@ -49,6 +49,7 @@ class LoginController extends Controller
                 return redirect('/top');
             }
         }
+        // 認証に失敗した場合は、ログインフォームを表示します。
         return view("auth.login");
     }
 

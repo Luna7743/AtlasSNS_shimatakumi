@@ -9,6 +9,7 @@ use App\Post;
 //Auth ファサードは、認証ユーザーの情報を取得するために使用されます。
 use Illuminate\Support\Facades\Auth;
 
+// LaravelのWebアプリケーションで投稿に関連する処理を担当
 class PostsController extends Controller
 {
     // 新規投稿
