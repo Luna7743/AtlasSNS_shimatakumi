@@ -139,7 +139,7 @@ h2 {
 
 }
 
-.alert {
+.pass-updete {
     color: red;
     margin-top: 10px;
     text-align: center;
@@ -178,4 +178,9 @@ h2 {
 
 #clear>p>a {
     border-bottom: none;
+}
+
+/* バリデーション */
+.alert {
+    color: rgb(210, 50, 50);
 }

@@ -60,9 +60,6 @@ class RegisterController extends Controller
                 'password' => bcrypt($password),
             ]);
 
-            //ユーザー名をセッションに保存
-            //Sessionput('username', $username);
-
             //session機能利用して、ユーザー名表示
             $request->session()->put('username',$username);
 

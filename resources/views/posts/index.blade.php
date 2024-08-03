@@ -34,12 +34,10 @@
                             <div class="user-icon">
                                 <img src="{{ asset($post->user->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
                             </div>
-
                             <div class="user-post-list">
                                 <div class="login-name">{{ $post->user->username }}</div>
                                 <div class="post-content">{!! nl2br(e($post->post)) !!}</div>
                             </div>
-
                         </td>
 
 

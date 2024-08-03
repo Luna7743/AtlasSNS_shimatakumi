@@ -22,7 +22,7 @@
 <body>
   {{-- フラッシュメッセージの表示 --}}
     @if (session('success'))
-        <div class="alert alert-success">
+        <div class="pass-updete">
             {{ session('success') }}
         </div>
     @endif

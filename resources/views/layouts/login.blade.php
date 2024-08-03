@@ -49,7 +49,7 @@
                 </ul>
             </nav>
             <div class="icon">
-                <img src="{{ '/' . Auth::user()->images }}" alt="ユーザーのアイコン" class="user-icon-image">
+                <img src="{{ 'storage/' . Auth::user()->images }}" alt="ユーザーのアイコン" class="user-icon-image">
             </div>
 
         </div>

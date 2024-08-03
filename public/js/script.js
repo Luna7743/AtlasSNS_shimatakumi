@@ -33,5 +33,10 @@ $(function () {
     $('.js-modal').fadeOut();
     return false;
   });
+});
 
+// ファイル選択のイベントリスナーを追加
+$('#file_upload').on('change', function () {
+  var fileName = this.files[0] ? this.files[0].name : '';
+  $('#file_name').text(fileName);
 });
