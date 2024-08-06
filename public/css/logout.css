@@ -51,7 +51,7 @@ header img {
 }
 
 #container {
-    width: 80%;
+    width: 70%;
     /* 必要に応じて調整 */
     max-width: 600px;
     /* 必要に応じて調整 */
@@ -66,7 +66,7 @@ header img {
 .subtitle {
     font-size: 40px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
 }
 
@@ -95,7 +95,7 @@ form label {
     margin-bottom: 5px;
 }
 
-form .input {
+.input {
     width: 80%;
     /* 必要に応じて調整 */
     padding: 10px;
@@ -105,12 +105,13 @@ form .input {
 }
 
 form input[type="submit"] {
-    width: 30%;
-    padding: 10px;
-    margin-left: 50%;
+    width: 40%;
+    padding: 5px 20px;
+    margin-left: 40%;
     margin-bottom: 20px;
-    background-color: rgb(210, 50, 50);
+    background-color: rgb(255, 50, 90);
     color: #fff;
+    font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -156,18 +157,24 @@ h2 {
     text-align: center;
 }
 
-#clear>.comp {
-    font-size: 14px;
-    text-align: left;
-    margin: 50px 50px 30px 50px;
+.welcome {
+    font-weight: bold;
+}
+
+.comp-list {
+    display: table;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 #clear>.btn {
     font-size: 14px;
-    width: 40%;
+    width: 50%;
     padding: 10px;
-    margin-bottom: 20px;
-    margin: auto;
+    margin: 20px auto;
     background-color: rgb(210, 50, 50);
     color: #fff;
     border: none;
@@ -183,4 +190,6 @@ h2 {
 /* バリデーション */
 .alert {
     color: rgb(210, 50, 50);
+    white-space: nowrap;
+    margin: auto;
 }

@@ -11,7 +11,7 @@
                 {{-- 現在のアイコンを表示 --}}
                 <div class="icon-image">
                     @if ($user->images === null)
-                        <img class="user-icon-image" src="{{ asset('images/icon.png') }}" alt="プロフィール画像">
+                        <img class="user-icon-image" src="{{ asset('images/icon1.png') }}" alt="プロフィール画像">
                     @else
                         <img class="user-icon-image" src="{{ Storage::url($user->images) }}" alt="プロフィール更新画像">
                     @endif

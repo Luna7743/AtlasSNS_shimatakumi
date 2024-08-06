@@ -40,3 +40,32 @@ $('#file_upload').on('change', function () {
   var fileName = this.files[0] ? this.files[0].name : '';
   $('#file_name').text(fileName);
 });
+
+//モーダルバリデーションメッセージ
+$(document).ready(function () {
+  $('#updateForm').on('submit', function (event) {
+    // validは、フォームが有効であるかどうかを示すフラグです。初期値はtrueに設定します。
+    var valid = true;
+    // errorMessagesは、エラーメッセージを格納する配列です。
+    var errorMessages = [];
+
+    // IDがuppostのテキストエリアからユーザーの入力値を取得します。
+    var uppost = $('#uppost').val();
+
+    if (uppost.trim() === '') {
+      valid = false;
+      errorMessages.push('投稿内容は必須です。');
+    } else if (uppost.length < 1) {
+      valid = false;
+      errorMessages.push('投稿内容は1文字以上でなければなりません。');
+    } else if (uppost.length > 150) {
+      valid = false;
+      errorMessages.push('投稿内容は150文字以内でなければなりません。');
+    }
+
+    if (!valid) {
+      event.preventDefault(); // フォームの送信を防ぐ
+      $('#errorMessages').html(errorMessages.join('<br>'));
+    }
+  });
+});

@@ -49,7 +49,13 @@
                 </ul>
             </nav>
             <div class="icon">
-                <img src="{{ '/' . Auth::user()->images }}" alt="ユーザーのアイコン" class="user-icon-image">
+                @if (Auth::user()->images)
+                    <img src="{{ Storage::url(Auth::user()->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
+                @else
+                    <img src="{{ asset('images/icon1.png') }}" alt="デフォルトアイコン" class="user-icon-image">
+                @endif
+
+                {{-- {{ dd(Auth::user()->images) }} --}}
             </div>
 
         </div>

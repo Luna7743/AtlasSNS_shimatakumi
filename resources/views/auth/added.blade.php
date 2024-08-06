@@ -4,12 +4,14 @@
 
 <div id="clear">
   <div class="welcome">
-    <p>{{ session('username') }} さん</p>
+    <p>{{ session('username') }}さん</p>
     <p>ようこそ！AtlasSNSへ！</p>
   </div>
   <div class="comp">
-    <p>ユーザー登録が完了いたしました。</p>
-    <p>早速ログインをしてみましょう！</p>
+    <ul class="comp-list">
+      <li>ユーザー登録が完了いたしました。</li>
+      <li>早速ログインをしてみましょう！</li>
+    </ul>
   </div>
 
   <p class="btn"><a href="/login">ログイン画面へ</a></p>

@@ -6,7 +6,11 @@
         <div class="main-form">
             <div class="user-icon">
                 <!-- ユーザーのアイコンを表示 -->
-                <img src="{{ 'storage/' . Auth::user()->images }}" alt="ユーザーのアイコン" class="user-icon-image">
+                @if (Auth::user()->images)
+                    <img src="{{ Storage::url(Auth::user()->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
+                @else
+                    <img src="{{ asset('images/icon1.png') }}" alt="デフォルトアイコン" class="user-icon-image">
+                @endif
             </div>
 
             <form action="/postscreate" method="post" class="post-form-content">
@@ -14,6 +18,9 @@
                 <div class="form-group">
                     <!-- 投稿内容の入力フィールド -->
                     <textarea name="post" id="" class="form-control" placeholder="投稿内容を入力してください"></textarea>
+                    @error('post')
+                        <span class="form-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-group">
@@ -71,13 +78,14 @@
     <div class="modal js-modal">
         <div class="modal__bg"></div>
         <div class="modal__content">
-            <form action="/post/update" method="post" class="modal-form">
+            <form id="updateForm" action="/post/update" method="post" class="modal-form">
                 @csrf
-                <textarea name="uppost" class="modal_post_content"></textarea>
+                <textarea id="uppost" name="uppost" class="modal_post_content"></textarea>
                 <input type="hidden" name="post_id" class="modal_post_id" value="">
-                <button type="submit" class="modal-buttom">
+                <button type="submit" class="modal-button">
                     <img src="{{ asset('images/edit.png') }}" alt="更新" class="op-icon">
                 </button>
+                <div id="errorMessages" style="color: red;"></div>
             </form>
         </div>
     </div>

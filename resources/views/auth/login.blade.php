@@ -9,7 +9,7 @@
 {{ Form::label('メールアドレス') }}
 {{ Form::text('mail',null,['class' => 'input']) }}
 {{ Form::label('パスワード') }}
-{{ Form::password('password',['class' => 'input']) }}
+{{ Form::password('password',['class' => 'input', 'autocomplete' => 'new-password']) }}
 
 {{ Form::submit('ログイン') }}
 

@@ -2,21 +2,20 @@
 
 @section('content')
 <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '/register']) !!}
+{!! Form::open(['url' => '/register', 'autocomplete' => 'off']) !!}
 
 <h2>新規ユーザー登録</h2>
-
 {{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
+{{ Form::text('username', '', ['class' => 'input', 'autocomplete' => 'off']) }}
 
 {{ Form::label('メールアドレス') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
+{{ Form::text('mail', '', ['class' => 'input', 'autocomplete' => 'off']) }}
 
 {{ Form::label('パスワード') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+{{ Form::password('password', ['class' => 'input', 'autocomplete' => 'new-password']) }}
 
 {{ Form::label('パスワード確認') }}
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}
+{{ Form::password('password_confirmation', ['class' => 'input', 'autocomplete' => 'new-password']) }}
 
 {{ Form::submit('新規登録') }}
 
