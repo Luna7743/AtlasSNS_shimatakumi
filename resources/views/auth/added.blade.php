@@ -4,7 +4,7 @@
 
 <div id="clear">
   <div class="welcome">
-    <p>{{ session('username') }}さん</p>
+    <p><span>{{ session('username') }}</span>さん</p>
     <p>ようこそ！AtlasSNSへ！</p>
   </div>
   <div class="comp">
