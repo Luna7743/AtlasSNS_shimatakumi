@@ -10,12 +10,13 @@
 
                 {{-- 現在のアイコンを表示 --}}
                 <div class="icon-image">
-                    @if ($user->images === null)
+                    @if (is_null($user->images) || $user->images === '' || $user->images === 'images/icon1.png')
                         <img class="user-icon-image" src="{{ asset('images/icon1.png') }}" alt="プロフィール画像">
                     @else
                         <img class="user-icon-image" src="{{ Storage::url($user->images) }}" alt="プロフィール更新画像">
                     @endif
                 </div>
+                {{-- {{ dd($user->images) }} --}}
 
                 <div class="profile-user">
                     <div class="profile-form-group">

@@ -48,16 +48,15 @@
                     </li>
                 </ul>
             </nav>
+
+            <!-- ユーザーのアイコンを表示 -->
             <div class="icon">
-                @if (Auth::user()->images)
-                    <img src="{{ Storage::url(Auth::user()->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
+                @if (is_null(Auth::user()->images) || Auth::user()->images === '' || Auth::user()->images === 'images/icon1.png')
+                    <img class="user-icon-image" src="{{ asset('images/icon1.png') }}" alt="プロフィール画像">
                 @else
-                    <img src="{{ asset('images/icon1.png') }}" alt="デフォルトアイコン" class="user-icon-image">
+                    <img class="user-icon-image" src="{{ Storage::url(Auth::user()->images) }}" alt="プロフィール更新画像">
                 @endif
-
-                {{-- {{ dd(Auth::user()->images) }} --}}
             </div>
-
         </div>
     </header>
 

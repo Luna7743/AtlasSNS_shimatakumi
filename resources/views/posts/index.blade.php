@@ -4,12 +4,13 @@
     <div class="post-container">
         <!-- 投稿フォーム -->
         <div class="main-form">
+
+            <!-- ユーザーのアイコンを表示 -->
             <div class="user-icon">
-                <!-- ユーザーのアイコンを表示 -->
-                @if (Auth::user()->images)
-                    <img src="{{ Storage::url(Auth::user()->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
+                @if (is_null(Auth::user()->images) || Auth::user()->images === '' || Auth::user()->images === 'images/icon1.png')
+                    <img class="user-icon-image" src="{{ asset('images/icon1.png') }}" alt="プロフィール画像">
                 @else
-                    <img src="{{ asset('images/icon1.png') }}" alt="デフォルトアイコン" class="user-icon-image">
+                    <img class="user-icon-image" src="{{ Storage::url(Auth::user()->images) }}" alt="プロフィール更新画像">
                 @endif
             </div>
 
