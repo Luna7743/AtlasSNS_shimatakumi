@@ -40,7 +40,7 @@
                     <tr>
                         <td class="list-post">
                             <div class="user-icon">
-                                <img src="{{ asset($post->user->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
+                                <img src="{{ Storage::url($post->user->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
                             </div>
                             <div class="user-post-list">
                                 <div class="login-name">{{ $post->user->username }}</div>

@@ -140,11 +140,29 @@ class UsersController extends Controller
         $user->mail = $request->input('mail');
         $user->bio = $request->input('bio');
 
+        //保存用
+        // //画像ファイルをアップロードして保存する
+        // if ($request->hasFile('image')) {
+        //     //←リクエストに画像ファイルが含まれているかを確認
+        //     $name = $request->file('image')->getClientOriginalName(); //アップロードされた画像ファイルの元の名前を取得
+        //     $path = $request->file('image')->storeAs('images', $name, 'public');
+        //     $user->images = $path;
+        // }
+
         //画像ファイルをアップロードして保存する
         if ($request->hasFile('image')) {
-            //←リクエストに画像ファイルが含まれているかを確認
-            $name = $request->file('image')->getClientOriginalName(); //アップロードされた画像ファイルの元の名前を取得
-            $path = $request->file('image')->storeAs('images', $name, 'public');
+            //アップロードされた画像ファイルの元の名前と拡張子を取得
+            $originalName = $request->file('image')->getClientOriginalName();
+            $extension = $request->file('image')->getClientOriginalExtension();
+
+            //タイムスタンプをつけて新しいファイル名を生成
+            $timestamp = now()->format('YmdHis');
+            $filename = pathinfo($originalName, PATHINFO_FILENAME) . '_' . $timestamp . '.' . $extension;
+
+            //画像を指定のパスに保存
+            $path = $request->file('image')->storeAs('images', $filename, 'public');
+
+            //保存した画像のパスをユーザーの images フィールドに設定
             $user->images = $path;
         }
 

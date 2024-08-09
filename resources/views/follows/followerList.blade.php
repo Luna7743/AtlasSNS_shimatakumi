@@ -9,7 +9,7 @@
                 <div class="icon-list">
                     @foreach ($followers as $user)
                         <a href="{{ route('users.show', $user->id) }}">
-                            <img src="{{ asset($user->images) }}" alt="アイコン" class="user-icon-image">
+                            <img src="{{ Storage::url($user->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
                         </a>
                     @endforeach
                 </div>
@@ -23,7 +23,7 @@
                            <td class="list-post">
                                 <div class="user-icon">
                                     <a href="{{ route('users.show', $post->user->id) }}">
-                                        <img src="{{ asset($post->user->images) }}" alt="アイコン" class="user-icon-image">
+                                        <img src="{{ Storage::url($post->user->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
                                     </a>
                                 </div>
                                 <div class="user-post-list">

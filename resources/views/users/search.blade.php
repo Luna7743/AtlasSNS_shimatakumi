@@ -24,7 +24,7 @@
         <div class="user-list">
             @foreach ($users as $user)
                 <div class="user-item">
-                    <img src="{{ asset($user->images) }}" alt="ユーザーアイコン" class="user-icon-image">
+                    <img src="{{ Storage::url($user->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
                     <p>{{ $user->username }}</p>
                     <div class="user-follow">
                         @if (auth()->user()->isFollowing($user->id))
