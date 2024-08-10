@@ -10,7 +10,7 @@
                 @if (is_null(Auth::user()->images) || Auth::user()->images === '' || Auth::user()->images === 'images/icon1.png')
                     <img class="user-icon-image" src="{{ asset('images/icon1.png') }}" alt="プロフィール画像">
                 @else
-                    <img class="user-icon-image" src="{{ Storage::url(Auth::user()->images) }}" alt="プロフィール更新画像">
+                    <img class="user-icon-image" src="{{ asset(Storage::url(Auth::user()->images)) }}" alt="プロフィール更新画像">
                 @endif
             </div>
 
@@ -40,7 +40,7 @@
                     <tr>
                         <td class="list-post">
                             <div class="user-icon">
-                                <img src="{{ Storage::url($post->user->images) }}" alt="ユーザーのアイコン" class="user-icon-image">
+                                <img src="{{ asset(Storage::url($post->user->images)) }}" alt="ユーザーのアイコン" class="user-icon-image">
                             </div>
                             <div class="user-post-list">
                                 <div class="login-name">{{ $post->user->username }}</div>

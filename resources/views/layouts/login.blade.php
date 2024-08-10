@@ -54,7 +54,7 @@
                 @if (is_null(Auth::user()->images) || Auth::user()->images === '' || Auth::user()->images === 'images/icon1.png')
                     <img class="user-icon-image" src="{{ asset('images/icon1.png') }}" alt="プロフィール画像">
                 @else
-                    <img class="user-icon-image" src="{{ Storage::url(Auth::user()->images) }}" alt="プロフィール更新画像">
+                    <img class="user-icon-image" src="{{ asset(Storage::url(Auth::user()->images)) }}" alt="プロフィール更新画像">
                 @endif
             </div>
         </div>

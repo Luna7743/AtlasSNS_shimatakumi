@@ -4,7 +4,7 @@
     <div class="container">
         <div class="main-form">
             <div class="show-main">
-                <img src="{{ asset($user->images) }}" alt="ユーザーアイコン" class="user-icon-image">
+                <img src="{{ asset(Storage::url($user->images)) }}" alt="ユーザーのアイコン" class="user-icon-image">
                 <div class="show-profile">
                     <dl>
                         <dt>ユーザー名</dt>
@@ -37,7 +37,7 @@
                     <tr>
                         <td class="list-post">
                             <div class="user-icon">
-                                <img src="{{ asset($post->user->images) }}" alt="アイコン" class="user-icon-image">
+                                <img src="{{ asset(Storage::url($post->user->images)) }}" alt="ユーザーのアイコン" class="user-icon-image">
                             </div>
                             <div class="user-post-list">
                                 <p>{{ $post->user->username }}</p>
